@@ -1,0 +1,98 @@
+---
+import { type Language } from '../i18n/translations';
+import { useTranslations, getLocalizedPath } from '../i18n/utils';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  lang: Language;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href={getLocalizedPath('/', lang)}>Ruedi R. Renggli</a>
+    </div>
+    <nav>
+      <a href={getLocalizedPath('/', lang)} class:list={{ active: currentPath === '/' }}>
+        {t('nav.home')}
+      </a>
+      <a href={getLocalizedPath('/music', lang)} class:list={{ active: currentPath === '/music' }}>
+        {t('nav.music')}
+      </a>
+      <a href={getLocalizedPath('/contact', lang)} class:list={{ active: currentPath === '/contact' }}>
+        {t('nav.contact')}
+      </a>
+    </nav>
+    <LanguageSwitcher currentLang={lang} currentPath={Astro.url.pathname} />
+  </div>
+</header>
+
+<style>
+  header {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #333;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: #333;
+    border-bottom-color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    nav {
+      gap: 1rem;
+    }
+
+    .logo a {
+      font-size: 1.2rem;
+    }
+  }
+</style>

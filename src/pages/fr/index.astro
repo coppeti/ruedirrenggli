@@ -1,32 +1,32 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { useTranslations } from '../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
 
-const lang = 'de';
+const lang = 'fr';
 const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t('home.title')} lang={lang} currentPath="/">
   <section class="hero">
     <h1>Ruedi R. Renggli</h1>
-    <p class="subtitle">Komponist & Musiker</p>
+    <p class="subtitle">Compositeur & Musicien</p>
   </section>
 
   <section class="biography">
     <h2>{t('home.biography')}</h2>
     <div class="bio-content">
       <p>
-        Ruedi R. Renggli ist ein Schweizer Komponist und Musiker mit einer tiefen Leidenschaft
-        für kreative musikalische Ausdrucksformen. Seine Kompositionen verbinden traditionelle
-        Elemente mit modernen Klanglandschaften.
+        Ruedi R. Renggli est un compositeur et musicien suisse avec une profonde passion
+        pour les formes d'expression musicale créatives. Ses compositions allient des
+        éléments traditionnels à des paysages sonores modernes.
       </p>
       <p>
-        Mit jahrelanger Erfahrung in der Musikproduktion hat Ruedi einen einzigartigen Stil
-        entwickelt, der Zuhörer in verschiedenen Kulturen und Sprachen anspricht.
+        Avec des années d'expérience dans la production musicale, Ruedi a développé un
+        style unique qui touche les auditeurs de différentes cultures et langues.
       </p>
       <p>
-        Seine Werke zeichnen sich durch melodische Tiefe und harmonische Komplexität aus,
-        die sowohl emotional berührend als auch intellektuell anregend sind.
+        Ses œuvres se caractérisent par une profondeur mélodique et une complexité harmonique
+        qui sont à la fois émouvantes et intellectuellement stimulantes.
       </p>
     </div>
   </section>

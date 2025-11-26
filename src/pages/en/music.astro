@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const tracks = [
+  { title: 'Composition No. 1', file: '/music/track1.mp3' },
+  { title: 'Composition No. 2', file: '/music/track2.mp3' },
+  { title: 'Composition No. 3', file: '/music/track3.mp3' },
+];
+---
+
+<BaseLayout title={t('music.title')} lang={lang} currentPath="/music">
+  <h1>{t('music.title')}</h1>
+
+  <div class="music-intro">
+    <p>
+      Discover a selection of my musical compositions.
+      Each piece is a journey through different sonic worlds and emotional landscapes.
+    </p>
+  </div>
+
+  <div class="tracks">
+    {tracks.map((track) => (
+      <div class="track">
+        <h3>{track.title}</h3>
+        <audio controls preload="metadata">
+          <source src={track.file} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    ))}
+  </div>
+
+  <div class="coming-soon">
+    <p><em>More compositions will be available soon.</em></p>
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .music-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .tracks {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .track {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .track h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+  }
+
+  audio {
+    width: 100%;
+    outline: none;
+  }
+
+  .coming-soon {
+    text-align: center;
+    margin-top: 3rem;
+    color: #888;
+  }
+</style>
