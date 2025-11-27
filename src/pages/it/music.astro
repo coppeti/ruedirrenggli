@@ -5,10 +5,32 @@ import { useTranslations } from '../../i18n/utils';
 const lang = 'it';
 const t = useTranslations(lang);
 
+function encodeFilePath(path: string): string {
+  const parts = path.split('/');
+  const filename = parts.pop() || '';
+  return parts.join('/') + '/' + encodeURIComponent(filename);
+}
+
 const tracks = [
-  { title: 'Composizione N. 1', file: '/music/track1.mp3' },
-  { title: 'Composizione N. 2', file: '/music/track2.mp3' },
-  { title: 'Composizione N. 3', file: '/music/track3.mp3' },
+  { title: 'Uf em Ahornbänkli', file: '/music/01_Uf_em_Ahornbaenkli_1.mp3' },
+  { title: 'Caprice', file: '/music/02_Caprice_1.mp3' },
+  { title: 'Ärdeplatz', file: '/music/03_Aerdeplatz_1.mp3' },
+  { title: 'Morgenmuffel', file: '/music/04_Morgenmuffel_1.mp3' },
+  { title: 'Jetzt Wämmer Zäme Stah', file: '/music/05_Jetzt_Waemmer_Zaeme_Stah_1.mp3' },
+  { title: 'Es Wunder', file: '/music/06_Es_Wunder_1.mp3' },
+  { title: 'De Bäsetanz', file: '/music/07_De_Baesetanz_1.mp3' },
+  { title: 'Früeh Am Morge', file: '/music/08_Frueeh_Am_Morge_1.mp3' },
+  { title: 'I Der Stilli', file: '/music/09_I_Der_Stilli_1.mp3' },
+  { title: 'My Boum, My Fründ', file: '/music/10_My_Boum_My_Fruend_1.mp3' },
+  { title: 'Abig A Der Limmat', file: '/music/11_Abig_A_Der_Limmat_1.mp3' },
+  { title: 'Wiehnachtsgab', file: '/music/12_Wiehnachtsgab_1.mp3' },
+  { title: 'Christmas On Mountain', file: '/music/13_Christmas_On_Mountain_1.mp3' },
+  { title: 's\'Natelglüt', file: '/music/14_sNatelgluet_1.mp3' },
+  { title: 'Tierwelt-Marsch', file: '/music/15_Tierwelt-Marsch_1.mp3' },
+  { title: 'Liseli-Polka', file: '/music/16_Liseli-Polka_1.mp3' },
+  { title: 'Im Hüehnerhof', file: '/music/17_Im_Hueehnerhof_1.mp3' },
+  { title: 'Vo Lozärn zum Bäse-Kurt', file: '/music/18_Vo_Lozaern_zum_Baese-Kurt_1.mp3' },
+  { title: 'Jede Tag', file: '/music/19_Jede_Tag_1.mp3' },
 ];
 ---
 
@@ -27,16 +49,13 @@ const tracks = [
       <div class="track">
         <h3>{track.title}</h3>
         <audio controls preload="metadata">
-          <source src={track.file} type="audio/mpeg" />
+          <source src={encodeFilePath(track.file)} type="audio/mpeg" />
           Il tuo browser non supporta l'elemento audio.
         </audio>
       </div>
     ))}
   </div>
 
-  <div class="coming-soon">
-    <p><em>Altre composizioni saranno presto disponibili.</em></p>
-  </div>
 </BaseLayout>
 
 <style>
