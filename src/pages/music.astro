@@ -48,7 +48,7 @@ const tracks = [
     {tracks.map((track) => (
       <div class="track">
         <h3>{track.title}</h3>
-        <audio controls preload="metadata">
+        <audio controls preload="metadata" controlsList="nodownload noplaybackrate">
           <source src={encodeFilePath(track.file)} type="audio/mpeg" />
           Ihr Browser unterstützt das Audio-Element nicht.
         </audio>

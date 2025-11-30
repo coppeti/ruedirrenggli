@@ -8,26 +8,54 @@ const t = useTranslations(lang);
 
 <BaseLayout title={t('home.title')} lang={lang} currentPath="/">
   <section class="hero">
-    <h1>Ruedi R. Renggli</h1>
-    <p class="subtitle">Compositore & Musicista</p>
+    <h1>Rudolf R. Renggli</h1>
+    <p class="subtitle">Insegnante di musica e canto – Direttore d'orchestra e compositore – Arrangiatore</p>
+  </section>
+
+  <section class="about-me">
+    <h2>Chi sono</h2>
+    <div class="about-content">
+      <p>
+        Dopo aver fatto un corso professionale e un soggiorno linguistico di due anni nella Svizzera romanda, ho finito gli studi di clarinetto e direzione d'orchestra al Conservatorio di Lucerna. Ho anche studiato musica scolastica e sacra all'Accademia di musica di Lucerna.
+      </p>
+      <p>
+        Ho continuato a studiare canto all'Accademia di Basilea con Derrick Olsen e al Conservatorio di Berna con Margrit Konrad. Ho anche seguito dei corsi di perfezionamento, in particolare con Elisabeth Schwarzkopf, che mi hanno aiutato un sacco a lavorare sulla voce e sulla didattica.
+      </p>
+      <p>
+        Ho fatto esperienza nell'orchestra come membro dell'Orchestra Sinfonica di Lucerna, che mi ha portato poco dopo a Zurigo per studiare direzione d'orchestra con il professor Ferdinand Leitner.
+      </p>
+    </div>
   </section>
 
   <section class="biography">
     <h2>{t('home.biography')}</h2>
     <div class="bio-content">
       <p>
-        Ruedi R. Renggli è un compositore e musicista svizzero con una profonda passione
-        per le forme di espressione musicale creative. Le sue composizioni combinano elementi
-        tradizionali con paesaggi sonori moderni.
+        Rudolf R. Renggli ha imparato tutto quello che sa sulla composizione da Albert Jenny, Albert Benz, Caspar Diethelm, Friedrich Etzelmann e Alfred Reed (USA).
       </p>
       <p>
-        Con anni di esperienza nella produzione musicale, Ruedi ha sviluppato uno stile
-        unico che raggiunge ascoltatori di diverse culture e lingue.
+        All'Oberstufenzentrum di Entlebuch, Rudolf R. Renggli ha insegnato musica e canto per 12 anni, dirigendo diverse orchestre di fiati, brass band, cori di jodel, cori di bambini, l'Operettenbühne Entlebuch e il coro misto locale.
       </p>
       <p>
-        Le sue opere sono caratterizzate da profondità melodica e complessità armonica che
-        sono sia emotivamente toccanti che intellettualmente stimolanti.
+        Dal 1979 ha lavorato come redattore musicale alla radio svizzera DRS. Nel 1995 è stato chiamato dalla redazione Volkskultur come redattore musicale alla televisione svizzera DRS. La sua attività di esperto in patria e all'estero copre tutti i settori della musica corale, bandistica e popolare in generale.
       </p>
+    </div>
+  </section>
+
+  <section class="musical-direction">
+    <h2>Direzione musicale</h2>
+    <div class="direction-content">
+      <ul>
+        <li>1970 – 1974 MG Werthenstein</li>
+        <li>1971 – 1981 MG BB Geiss</li>
+        <li>1971 – 1990 Jodlerklub Luegisland Ebnet-Entlebuch</li>
+        <li>1973 – 1998 Gemischter Chor Entlebuch</li>
+        <li>1974 – 1992 Harmoniemusik Kriens</li>
+        <li>1977 – 1985 Orchesterverein Entlebuch / Operettenbühne Entlebuch</li>
+        <li>1994 – 2018 Jodlersextett des TV Alte Sektion Zürich</li>
+        <li>1997 – 2003 Stadtharmonie Laufen</li>
+        <li>2007 – 2014 Jodlerchörli Hitzkirchertal</li>
+      </ul>
     </div>
   </section>
 </BaseLayout>
@@ -51,15 +79,24 @@ const t = useTranslations(lang);
     font-weight: 300;
   }
 
-  .biography {
+  .about-me,
+  .biography,
+  .musical-direction {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
   }
 
-  .bio-content {
+  .about-content,
+  .bio-content,
+  .direction-content {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #555;
+  }
+
+  .direction-content ul {
+    padding-left: 0;
+    list-style-position: inside;
   }
 
   @media (max-width: 768px) {
