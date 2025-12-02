@@ -56,6 +56,124 @@ const tracks = [
     ))}
   </div>
 
+  <section class="artworks-catalog">
+    <h2>{t('music.catalog')}</h2>
+    <div class="catalog-content">
+      <h4>Sinfonische Blasmusik</h4>
+      <ul>
+        <li>Kleine Fantasie für Blasorchester (1985)<br>(nach Themen eines überlieferten Muotathaler Naturjodel, Aufsteigender Tritonus)</li>
+      </ul>
+
+      <h4>Brass Band</h4>
+      <ul>
+        <li>Fantasie-Variationen über den Choral „Nun danket alle Gott" für Brass Band (2000)</li>
+        <li>Ballett Scene's for Brass Band (1999)</li>
+        <li>Caprice (Naturjodel im sinfonischen Charakter für Solojodel und Brass Band, oder Sinf. Blasorchester) (1998)</li>
+      </ul>
+
+      <h4>Blaskapelle</h4>
+      <ul>
+        <li>Nächtliches Küsschen (Walzer für Blaskapellen)</li>
+      </ul>
+
+      <h4>Alphorn</h4>
+      <ul>
+        <li>Wiggertaler-Chilbi (Alphorntrio)</li>
+      </ul>
+
+      <h4>Klarinettentrio</h4>
+      <ul>
+        <li>D'r Giige Benni</li>
+      </ul>
+
+      <h4>Märsche für Blasorchester und Brass Band</h4>
+      <ul>
+        <li>Darvino Marchesi-Marsch, HB</li>
+        <li>Divisionär Bucheli-Marsch, HB</li>
+        <li>Luga-Marsch, HB</li>
+        <li>Marsch der Galli-Zunft, HB</li>
+        <li>150 Jahre MG Hergiswil, BB</li>
+        <li>A jour, BB</li>
+        <li>The Stanard-bearer (Guggemätteli-Marsch), HB</li>
+        <li>Tierwelt-Marsch, HB</li>
+        <li>Sigigen, HB</li>
+      </ul>
+
+      <h4>Bearbeitungen</h4>
+      <ul>
+        <li>Die letzte Rose, Wind Ensemble</li>
+        <li>Schweizerpsalm, Wind Ensemble</li>
+      </ul>
+
+      <h4>Lieder</h4>
+      <ul>
+        <li>1977</li>
+        <li>Nur geliehen</li>
+        <li>Danklied für Männerchor (Jodelchor)</li>
+        <li>Busse (Jodelchor)</li>
+        <li>3 Verse zur Totenehrung</li>
+      </ul>
+
+      <h4>Jodellieder</h4>
+      <p><em>für Chor a cap. und Bläserbearbeitungen</em></p>
+      <ul>
+        <li>Abig a de Limmat</li>
+        <li>Alleluja für Jodelchor</li>
+        <li>Ärdeplatz</li>
+        <li>Busse Jodlermesse</li>
+        <li>Christmas on Mountains (Naturjodel Chor)</li>
+        <li>Danklied Jodlermesse</li>
+        <li>De Bäsetanz</li>
+        <li>Der Föhn</li>
+        <li>De Hüehnerhof</li>
+        <li>E Hustage-Chranket</li>
+        <li>Eusi Schwiiz (Chor und Englischhorn)</li>
+        <li>Früeh am Morge</li>
+        <li>Fürbitten Jodlermesse</li>
+        <li>Heilig Abe (Solo-Terzett und Chor)</li>
+        <li>I der Stilli (für Brass Band Ensemble und Orgel)</li>
+        <li>Isblueme (Weihnachtslied für Jodelchor und Bläser-Ensemble)</li>
+        <li>Jede Tag (a capella, arr. für Brass Ensemble und Orgel)</li>
+        <li>Jetzt wemmer zämestah</li>
+        <li>My Boum, my Fründ (a capella, arr. für Brass Ensemble und Orgel)</li>
+        <li>Ned z'höch Zäuerli</li>
+        <li>S'Natelglüt</li>
+        <li>S'Paraphrase (Jödeli Orgel und Englischhorn)</li>
+        <li>Summergwitter</li>
+        <li>Uf em Ahornbänkli</li>
+        <li>Vater unser (für Männer-und Jodelchor)</li>
+        <li>Wiehnachtsgab</li>
+      </ul>
+
+      <h4>Kinder-Jugendchor</h4>
+      <ul>
+        <li>Ei, ei ei</li>
+        <li>Uf em Ahornbänkli</li>
+      </ul>
+
+      <h4>Duette</h4>
+      <ul>
+        <li>Ärntedank</li>
+        <li>Der Föhn</li>
+        <li>I der Stilli</li>
+        <li>Jodlerchilbi isch vor Ort</li>
+        <li>Wiehnachtstroum (2 Singstimmen und Waldhorn)</li>
+      </ul>
+
+      <h4>Terzette</h4>
+      <ul>
+        <li>Der Föhn</li>
+        <li>Morgenmuffel</li>
+        <li>S'Ruusche</li>
+        <li>Es Wunder</li>
+        <li>Vertroue ha</li>
+      </ul>
+
+      <h4>Über 60 Ländler-Kompositionen</h4>
+      <p>Eine Vielzahl von Bearbeitungen, Chorsätze für gemischte Chöre, Männerchöre und Blasmusik (Blasorchester und Brass Bands), Streichorchester und U-Musik.</p>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>
@@ -74,7 +192,7 @@ const tracks = [
 
   .tracks {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -101,5 +219,37 @@ const tracks = [
     text-align: center;
     margin-top: 3rem;
     color: #888;
+  }
+
+  .artworks-catalog {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .artworks-catalog h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .catalog-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .catalog-content h4 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .catalog-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style-position: outside;
+  }
+
+  .catalog-content p {
+    margin-bottom: 0.5rem;
   }
 </style>
