@@ -144,27 +144,41 @@ const t = useTranslations(lang);
     e.preventDefault();
 
     const formData = new FormData(form);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    };
-
     const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
     submitBtn.disabled = true;
+    submitBtn.textContent = 'Invio in corso...';
     statusDiv.className = 'form-status';
     statusDiv.style.display = 'none';
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      statusDiv.className = 'form-status success';
-      statusDiv.textContent = 'Messaggio inviato con successo!';
-      form.reset();
+      // Minimum delay to show the sending state
+      const [response] = await Promise.all([
+        fetch('https://formspree.io/f/mblnadjn', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }),
+        new Promise(resolve => setTimeout(resolve, 800))
+      ]);
+
+      if (response.ok) {
+        statusDiv.className = 'form-status success';
+        statusDiv.style.display = 'block';
+        statusDiv.textContent = 'Messaggio inviato con successo! Grazie per averci contattato.';
+        form.reset();
+      } else {
+        throw new Error('Failed to send');
+      }
     } catch (error) {
       statusDiv.className = 'form-status error';
-      statusDiv.textContent = 'Errore durante l\'invio del messaggio.';
+      statusDiv.style.display = 'block';
+      statusDiv.textContent = 'Errore durante l\'invio del messaggio. Riprova più tardi.';
     } finally {
       submitBtn.disabled = false;
+      submitBtn.textContent = 'Invia';
     }
   });
 </script>
